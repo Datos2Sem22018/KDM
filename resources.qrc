@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>icons/stop.png</file>
+        <file>icons/search.png</file>
+        <file>icons/play.png</file>
+        <file>icons/pause.png</file>
+        <file>icons/open.png</file>
+        <file>icons/KDM.png</file>
+        <file>icons/home.png</file>
+        <file>icons/upload.png</file>
+        <file>icons/update.png</file>
+        <file>icons/metadata.png</file>
+    </qresource>
+    <qresource prefix="/KDM">
+        <file>icons/KDM.png</file>
+    </qresource>
+</RCC>

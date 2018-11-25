@@ -27,11 +27,13 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    videoplayer.cpp
+    videoplayer.cpp \
+    clientsocket.cpp
 
 HEADERS += \
         mainwindow.h \
-    videoplayer.h
+    videoplayer.h \
+    clientsocket.h
 
 FORMS += \
         mainwindow.ui \

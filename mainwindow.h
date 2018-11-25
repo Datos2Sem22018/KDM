@@ -19,6 +19,7 @@ public:
 
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    static void startClient();
 
 
 private slots:

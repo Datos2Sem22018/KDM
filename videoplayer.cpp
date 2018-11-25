@@ -58,6 +58,6 @@ void VideoPlayer::on_actionopen_triggered()
     QString filename = QFileDialog::getOpenFileName(this, "Open a File", "", "Video File (*.*)");
     on_actionstop_triggered();
 
-    player->setMedia(QUrl::fromLocalFile(MainWindow::getVideoName()));
+    player->setMedia(QUrl::fromLocalFile(filename));
     on_actionplay_triggered();
 }

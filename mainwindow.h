@@ -20,20 +20,17 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     static void startClient();
-    void setVideoName(QString name);
-    static QString getVideoName();
+
 
 
 private slots:
     void on_pushButton_3_clicked();
-    void on_pushButton_2_clicked();
-
     void on_upload_clicked();
-
     void on_pushButton_4_clicked();
+    void on_btn_Search_clicked();
 
 private:
-    QString video_Name;
+    static QString video_Name;
     Ui::MainWindow *ui;
     VideoPlayer videoPlayer;
 };

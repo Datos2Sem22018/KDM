@@ -37,7 +37,7 @@
      </size>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="btn_Search">
     <property name="geometry">
      <rect>
       <x>270</x>
@@ -101,7 +101,7 @@
      </size>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit">
+   <widget class="QLineEdit" name="text_Search">
     <property name="geometry">
      <rect>
       <x>10</x>

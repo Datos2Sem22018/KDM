@@ -10,6 +10,14 @@
 
 static QString videoName;
 
+void MainWindow::setVideoName(QString name){
+    video_Name = name;
+}
+
+QString MainWindow::getVideoName(){
+    return video_Name;
+}
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -31,11 +39,11 @@ void MainWindow::on_pushButton_3_clicked()
 void MainWindow::on_pushButton_2_clicked()
 {
     QString str = ui->lineEdit->text();
-    videoName = str;
-    ui->lineEdit->setText("Buscando: " + videoName);
+    video_Name = str;
+    ui->lineEdit->setText("Buscando: " + video_Name);
 
     for(int i = 0; i< 30; i++){
-        ui->listWidget->addItem(videoName);
+        ui->listWidget->addItem(video_Name);
 
     }
 }

@@ -20,6 +20,8 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     static void startClient();
+    void setVideoName(QString name);
+    static QString getVideoName();
 
 
 private slots:
@@ -31,6 +33,7 @@ private slots:
     void on_pushButton_4_clicked();
 
 private:
+    QString video_Name;
     Ui::MainWindow *ui;
     VideoPlayer videoPlayer;
 };

@@ -30,9 +30,6 @@ public:
     QTcpSocket* socket;
     QByteArray Data;
 
-    QJsonDocument doc;
-    QJsonParseError docError;
-
 public slots:
     void sockReady();
     void sockDisc();

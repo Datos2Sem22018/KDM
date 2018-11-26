@@ -5,6 +5,12 @@
 #include <QMediaPlayer>
 #include <QProgressBar>
 #include <QSlider>
+#include <QTcpSocket>
+#include <QMessageBox>
+#include <QDebug>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QJsonParseError>
 #include "videoplayer.h"
 
 namespace Ui {
@@ -21,13 +27,23 @@ public:
     ~MainWindow();
     static void startClient();
 
+    QTcpSocket* socket;
+    QByteArray Data;
 
+    QJsonDocument doc;
+    QJsonParseError docError;
+
+public slots:
+    void sockReady();
+    void sockDisc();
 
 private slots:
     void on_pushButton_3_clicked();
     void on_upload_clicked();
     void on_pushButton_4_clicked();
     void on_btn_Search_clicked();
+
+    void on_pushButton_2_clicked();
 
 private:
     static QString video_Name;

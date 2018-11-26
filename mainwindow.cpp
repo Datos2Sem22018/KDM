@@ -17,6 +17,10 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    socket = new QTcpSocket(this);
+        connect(socket, SIGNAL(readyRead()), this, SLOT(sockReady()));
+        connect(socket, SIGNAL(disconnected()), this, SLOT(sockDisc()));
 }
 
 MainWindow::~MainWindow()
@@ -24,13 +28,36 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+
+void MainWindow::sockDisc(){
+    socket->abort();
+    socket->deleteLater();
+}
+
+void MainWindow::sockReady(){
+    if(socket->waitForConnected(500)){
+        socket->waitForReadyRead(500);
+        Data = socket->readAll();
+
+        doc = QJsonDocument::fromJson(Data, &docError);
+
+        if(docError.errorString().toInt()==QJsonParseError::NoError){
+            if((doc.object().value("type").toString() == "connect") && (doc.object().value("status").toString() == "yes")){
+                QMessageBox::information(this, "Conectado","Coneccion exitosa");
+            }else{
+                QMessageBox::information(this, "No se ha consultado conectar","Intentar de nuevo");
+            }
+        }else{
+            QMessageBox::information(this, "No se ha podido conectar","Ha habido un error: " + docError.errorString());
+        }
+    }
+}
+
 void MainWindow::on_pushButton_3_clicked()
 {
     videoPlayer.show();
     this->hide();
 }
-
-
 
 void MainWindow::on_upload_clicked()
 {
@@ -80,4 +107,9 @@ void MainWindow::on_btn_Search_clicked()
         }
     }
 
+}
+
+void MainWindow::on_pushButton_2_clicked()
+{
+    socket->connectToHost("192.168.1.120", 5555);
 }

@@ -2,8 +2,10 @@
 #include "ui_videoplayer.h"
 
 #include <QFileDialog>
+#include <QMediaMetaData>
 #include <QVideoWidget>
 #include "mainwindow.h"
+#include <iostream>
 
 VideoPlayer::VideoPlayer(QWidget *parent) :
     QMainWindow(parent),

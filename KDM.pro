@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui multimedia multimediawidgets
+QT       += core gui multimedia multimediawidgets network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -28,12 +28,14 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     videoplayer.cpp \
-    clientsocket.cpp
+    clientsocket.cpp \
+    clientjson.cpp
 
 HEADERS += \
         mainwindow.h \
     videoplayer.h \
-    clientsocket.h
+    clientsocket.h \
+    clientjson.h
 
 FORMS += \
         mainwindow.ui \

@@ -91,7 +91,7 @@ void MainWindow::startClient(){
             {
                 cout << "Server Response:" << rec << endl;
             }
-            sleep(1);
+            sleep(1);//
         }
 }
 
